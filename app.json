@@ -4,19 +4,19 @@
   "env": {
     "api_id": {
       "description": "Tú id",
-      "value": "17317749"
+      "value": ""
     },
     "api_hash": {
       "description": "Tú id hash",
-      "value": "00ca45b84772802b814919963df9ef0a"
+      "value": ""
     },
     "tg_admin_user": {
       "description": "El admin",
-      "value": "User0075_69"
+      "value": ""
     },
     "bot_token": {
       "description": "El token del bot",
-      "value": "5135161593:AAEH2nLW9UOL_NHSAixMkDBryawDL7UdHX8"
+      "value": ""
     }
   },
   "buildpacks": [
