@@ -1,0 +1,10 @@
+Acerca de:
+Nombre: MoodleBot Down/Up
+Administrador: @User0075_69
+Versión: 1.4.0
+Fecha de actualización: 28/2/2022
+
+Nota:
+Este bot usa su nube como servidor donde almacena los archivos descargados para que usted los descargue sin gasto alguno.
+Es responsabilidad del Administrador que cuyos datos sencibles no sean adquiridos por terceros para evitar cualquier problema en el servicio que se provee,
+por lo tanto al usar este bot puede estar seguro que sus credenciales serán protegidas por el soporte de seguridad del Administrador.
