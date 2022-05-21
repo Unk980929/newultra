@@ -264,18 +264,15 @@ def onmessage(update,bot:ObigramClient):
     try:
         thread = bot.this_thread
         username = update.message.sender.username
-        links = []
         tl_admin_user = os.environ.get('tl_admin_user')
 
         #set in debug
-        tl_admin_user = os.environ.get('tl_admin_user')
+        tl_admin_user = os.environ.get('administrador')
 
         jdb = JsonDatabase('database')
         jdb.check_create()
         jdb.load()
-        
-        chatid = update.message.chat.id
-        id = update.message.chat.id
+
         user_info = jdb.get_user(username)
 
         if username == tl_admin_user or user_info :  # validate user
@@ -771,16 +768,18 @@ def onmessage(update,bot:ObigramClient):
         thread.store('msg',message)
 
         if '/start' in msgText:
-            chat_id = update.message.chat.id
-            getUser = user_info
-            if getUser:
-                getUser['broadcast'] = chat_id
-                jdb.save_data_user(username,getUser)
-                jdb.save()
-            print(f'El bot se a activado por: {username}')
-            msg = 'Bienvenido a TgUploader en su versió 1.20.0!\n\n'
-            msg+= 'Para saber como funciona esta versión solo use: /help\n'
-            bot.editMessageText(message,msg)
+            start_msg = '   🌟𝔹𝕆𝕋 𝕀ℕ𝕀ℂ𝕀𝔸𝔻𝕆🌟\n'
+            start_msg+= '࿇ ══━━━━✥◈✥━━━━══ ࿇\n'
+            start_msg+= '🤖Hola @' + str(username)+'\n'
+            start_msg+= '☺️! Bienvenid@ al bot de descargas gratis SuperDownload en su versión inicial 1.0 PlusEdition🌟!\n'
+            start_msg+= '🦾Desarrollador: ༺ @Luis_Daniel_Diaz ༻\n\n'
+            start_msg+= '🙂Si necesita ayuda o información utilice:\n'
+            start_msg+= '/help\n'
+            start_msg+= '/about\n'
+            start_msg+= '🙂Si usted desea añadir la barra de comandos al menú de acceso rápido de su bot envíe /commands.\n\n'
+            start_msg+= '😁𝚀𝚞𝚎 𝚍𝚒𝚜𝚏𝚛𝚞𝚝𝚎 𝚐𝚛𝚊𝚗𝚍𝚎𝚖𝚎𝚗𝚝𝚎 𝚜𝚞 𝚎𝚜𝚝𝚊𝚍𝚒𝚊😁.\n'
+            bot.editMessageText(message,start_msg)
+            message = bot.sendMessage(update.message.chat.id,'🦾')
         elif '/files' == msgText and user_info['cloudtype']=='moodle':
             proxy = ProxyCloud.parse(user_info['proxy'])
             client = MoodleClient(user_info['moodle_user'],
