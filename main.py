@@ -268,7 +268,7 @@ def onmessage(update,bot:ObigramClient):
         tl_admin_user = os.environ.get('tl_admin_user')
 
         #set in debug
-        tl_admin_user = 'Luis_Daniel_Diaz'
+        tl_admin_user = 'Unk980929'
 
         jdb = JsonDatabase('database')
         jdb.check_create()
@@ -311,7 +311,7 @@ def onmessage(update,bot:ObigramClient):
                 bot.sendMessage(update.message.chat.id,'Usted no es admin')
             return 
 
-        if '/add' in msgText:
+        if '/adduser' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
                 try:
@@ -359,7 +359,7 @@ def onmessage(update,bot:ObigramClient):
                 bot.sendMessage(update.message.chat.id,'》No tiene acceso a este comando》')
             return
 
-        if '/ban' in msgText:
+        if '/banuser' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
                 try:
@@ -389,7 +389,7 @@ def onmessage(update,bot:ObigramClient):
             else:
                 bot.sendMessage(update.message.chat.id,'》No tiene acceso a este comando》')
             return
-        if '/db' in msgText:
+        if '/getdb' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
                 sms1 = bot.sendMessage(update.message.chat.id,'Enviando la databse del bot...')
@@ -500,7 +500,7 @@ def onmessage(update,bot:ObigramClient):
                 bot.sendMessage(chat_id = chatid, parse_mode = 'Markdown', text = msg)
             return
 
-        if '/delChannel' in msgText:
+        if '/delchannel' in msgText:
             getUser = user_info
             if getUser:
                 getUser['channelid'] = 0
@@ -544,7 +544,7 @@ def onmessage(update,bot:ObigramClient):
             bot.sendMessage(update.message.chat.id, f'Proxy decryptado:\n{proxy_de}')
             return
 
-        if '/my' in msgText:
+        if '/myuser' in msgText:
             preview = jdb.preview(username)
             if preview:
                 bot.sendMessage(update.message.chat.id, f'》Usted está en modo preview')
@@ -553,7 +553,7 @@ def onmessage(update,bot:ObigramClient):
                 statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
                 bot.sendMessage(update.message.chat.id,statInfo)
                 return
-        if '/zip' in msgText:
+        if '/zips' in msgText:
             preview = jdb.preview(username)
             if preview:
                 bot.sendMessage(update.message.chat.id, f'》Usted está en modo preview')
@@ -573,7 +573,7 @@ def onmessage(update,bot:ObigramClient):
                     except:
                         bot.sendMessage(update.message.chat.id,f'》Error en el comando /zip size')
                 return
-        if '/acc' in msgText:
+        if '/account' in msgText:
             preview = jdb.preview(username)
             if preview:
                 bot.sendMessage(update.message.chat.id, f'》Usted está en modo preview')
@@ -611,7 +611,7 @@ def onmessage(update,bot:ObigramClient):
                 except:
                     bot.sendMessage(update.message.chat.id,'》Error en el comando /host moodlehost')
             return
-        if '/repo' in msgText:
+        if '/repoid' in msgText:
             preview = jdb.preview(username)
             if preview:
                 bot.sendMessage(update.message.chat.id, f'》Usted está en modo preview')
@@ -874,7 +874,7 @@ def onmessage(update,bot:ObigramClient):
                 
                 api_id = 11639974
                 api_hash = 'a5007babf6f3e96c9b51564356b64c30'
-                bot_token = '5381132814:AAHrmCxn16uzPnUav7MCd1N-J5rFp65GS0s'
+                bot_token = '5377296671:AAE5-uj9Ocmokz4TrVld63eHxVIGjKILqro'
 
                 chat_id = update.message.chat.id
                 message_id = update.message.message_id
@@ -890,7 +890,7 @@ def main():
     bot_token = os.environ.get('bot_token')
 
     #set in debug
-    bot_token = '5381132814:AAHrmCxn16uzPnUav7MCd1N-J5rFp65GS0s'
+    bot_token = '5377296671:AAE5-uj9Ocmokz4TrVld63eHxVIGjKILqro'
 
     bot = ObigramClient(bot_token)
     bot.onMessage(onmessage)
